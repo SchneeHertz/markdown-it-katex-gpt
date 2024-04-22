@@ -13,19 +13,25 @@ function escapedBracketRule(options) {
     let start = state.pos
 
     for (let { left, right } of options.delimiters) {
+
       // 检查是否以左标记开始
-      if (!state.src.slice(start).startsWith(left)) {
-        continue
-      }
-      let pos = start + left.length // 跳过左标记的长度
+      if (!state.src.slice(start).startsWith(left)) continue
+
+      // 跳过左标记的长度
+      let pos = start + left.length
+
+      // 寻找匹配的右标记
       while (pos < max) {
         if (state.src.slice(pos).startsWith(right)) {
           break
         }
         pos++
       }
-      if (pos >= max) continue // 没找到匹配的右标记
 
+      // 没找到匹配的右标记，跳过，进入下个匹配
+      if (pos >= max) continue
+
+      // 如果不是静默模式，将 LaTeX 公式转换为 MathML
       if (!silent) {
         const content = state.src.slice(start + left.length, pos)
         try {
@@ -40,7 +46,8 @@ function escapedBracketRule(options) {
         }
       }
 
-      state.pos = pos + right.length // 跳过右标记的长度
+      // 更新位置，跳过右标记的长度
+      state.pos = pos + right.length
       return true
     }
   }
