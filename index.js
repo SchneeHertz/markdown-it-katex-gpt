@@ -10,9 +10,9 @@ const defaultOptions = {
 function escapedBracketRule(options) {
   return (state, silent) => {
     const max = state.posMax
-    let start = state.pos
+    const start = state.pos
 
-    for (let { left, right } of options.delimiters) {
+    for (const { left, right } of options.delimiters) {
 
       // 检查是否以左标记开始
       if (!state.src.slice(start).startsWith(left)) continue
