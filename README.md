@@ -20,7 +20,7 @@ import markdownItKatexGpt from 'markdown-it-katex-gpt'
 ```
 const md = new MarkdownIt()
 md.use(markdownItKatexGpt)
-let result = md.render('\\[ F = G \\frac{{m_1 \\times m_2}}{{r^2}} \\]')
+let result = md.render('这个公式可以表示为：\n\n\\[ F = G \\frac{{m_1 \\times m_2}}{{r^2}} \\]\n\n')
 console.log(result)
 ```
 

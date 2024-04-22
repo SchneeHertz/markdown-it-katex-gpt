@@ -16,6 +16,11 @@
   ],
   "author": "schneehertz",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SchneeHertz/markdown-it-katex-gpt.git"
+  },
+  "homepage": "https://github.com/SchneeHertz/markdown-it-katex-gpt",
   "dependencies": {
     "katex": "^0.16.10"
   },
