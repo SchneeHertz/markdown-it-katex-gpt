@@ -23,11 +23,4 @@ let testString = `呀，让我来帮你解释一下万有引力公式喵！\n\n
 这就是为什么，即使地球和月球之间的距离很远，它们之间仍然有引力相互作用，使得月球围绕地球旋转喵！`
 
 let result = md.render(testString)
-fs.writeFile('test-result.html', `
-<!DOCTYPE html>
-<html lang="en">
-  <body>
-    ${result}
-  </body>
-</html>
-`)
+fs.writeFile('test-result.html', `<!DOCTYPE html><html lang="en"><body>${result}</body></html>`)

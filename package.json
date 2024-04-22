@@ -7,6 +7,9 @@
   "scripts": {
     "test": "test.js"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "markdown-it",
     "markdown-it-plugin",

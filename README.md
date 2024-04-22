@@ -24,7 +24,7 @@ let result = md.render('这个公式可以表示为：\n\n\\[ F = G \\frac{{m_1 
 console.log(result)
 ```
 
-### configure
+### Configure
 ```
 md.use(markdownItKatexGpt, {
   delimiters: [
