@@ -1,0 +1,25 @@
+{
+  "name": "markdown-it-katex-gpt",
+  "version": "1.0.0",
+  "description": "markdown-it plugin for rendering KaTeX formulas output by GPT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test.js"
+  },
+  "keywords": [
+    "markdown-it",
+    "markdown-it-plugin",
+    "markdown",
+    "katex",
+    "gpt"
+  ],
+  "author": "schneehertz",
+  "license": "MIT",
+  "dependencies": {
+    "katex": "^0.16.10"
+  },
+  "devDependencies": {
+    "markdown-it": "^14.1.0"
+  }
+}
