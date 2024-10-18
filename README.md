@@ -37,6 +37,8 @@ x = \\begin{cases}
 console.log(result)
 ```
 
+![example.jpg](https://raw.githubusercontent.com/SchneeHertz/markdown-it-katex-gpt/master/screenshots/example.jpg)
+
 ### Configure
 ```
 md.use(markdownItKatexGpt, {
