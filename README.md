@@ -37,7 +37,7 @@ x = \\begin{cases}
 console.log(result)
 ```
 
-![example.jpg](https://raw.githubusercontent.com/SchneeHertz/markdown-it-katex-gpt/master/screenshots/example.jpg)
+![example.jpg](https://raw.githubusercontent.com/SchneeHertz/markdown-it-katex-gpt/master/screenshot/example.jpg)
 
 ### Configure
 ```
