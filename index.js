@@ -2,8 +2,8 @@ import katex from 'katex'
 
 const defaultOptions = {
   delimiters: [
-    { left: '\\[', right: '\\]' },
-    { left: '\\(', right: '\\)' }
+    { left: '\\[', right: '\\]', display: true },
+    { left: '\\(', right: '\\)', display: false }
   ]
 }
 
@@ -12,7 +12,7 @@ function escapedBracketRule(options) {
     const max = state.posMax
     const start = state.pos
 
-    for (const { left, right } of options.delimiters) {
+    for (const { left, right, display } of options.delimiters) {
 
       // 检查是否以左标记开始
       if (!state.src.slice(start).startsWith(left)) continue
@@ -37,7 +37,8 @@ function escapedBracketRule(options) {
         try {
           const renderedContent = katex.renderToString(content, {
             throwOnError: false,
-            output: 'mathml'
+            output: 'mathml',
+            displayMode: display
           })
           const token = state.push('html_inline', '', 0)
           token.content = renderedContent

@@ -20,7 +20,20 @@ import markdownItKatexGpt from 'markdown-it-katex-gpt'
 ```
 const md = new MarkdownIt()
 md.use(markdownItKatexGpt)
-let result = md.render('这个公式可以表示为：\n\n\\[ F = G \\frac{{m_1 \\times m_2}}{{r^2}} \\]\n\n')
+let result = md.render(`
+\\[ F = G \\frac{{m_1 \\times m_2}}{{r^2}} \\]
+
+\\( \\boxed{\\pi=\\frac c d} \\) | \\( a\\raisebox{0.25em}{$b$}c \\) | \\( \\overbrace{a+b+c}^{\\text{note}} \\)
+
+\\( \\Braket{ ϕ | \\frac{∂^2}{∂ t^2} | ψ } \\)
+
+\\[
+x = \\begin{cases}
+   a &\\text{if } b \\\\
+   c &\\text{if } d
+\\end{cases}
+\\]
+`)
 console.log(result)
 ```
 
@@ -28,9 +41,9 @@ console.log(result)
 ```
 md.use(markdownItKatexGpt, {
   delimiters: [
-    { left: '\\[', right: '\\]' },
-    { left: '\\(', right: '\\)' },
-    { left: '$$', right: '$$' }
+    { left: '\\[', right: '\\]', display: true },
+    { left: '\\(', right: '\\)', display: false },
+    { left: '$$', right: '$$', display: false },
   ]
 })
 ```
