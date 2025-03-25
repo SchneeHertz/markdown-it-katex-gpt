@@ -8,8 +8,10 @@
     "test": "node test.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
+  "types": "index.d.ts",
   "keywords": [
     "markdown-it",
     "markdown-it-plugin",
